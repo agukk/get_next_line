@@ -6,7 +6,7 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 07:59:06 by kentakato         #+#    #+#             */
-/*   Updated: 2024/08/21 21:22:47 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/08/21 21:31:31 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ char *get_next_line(int fd)
             buf[i] = '\0';
             break;
         }
-        buf[i++] = c;   
+        buf[i] = c;
+        i++;   
     }
     return buf;
 }

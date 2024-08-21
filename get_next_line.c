@@ -6,7 +6,7 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 07:59:06 by kentakato         #+#    #+#             */
-/*   Updated: 2024/08/19 20:13:22 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/08/21 21:22:47 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,17 @@ char *get_next_line(int fd)
     static char buf[BUF_SIZE];
     size_t i = 0;
     char c;
+    ssize_t byte;
     
     while (i < BUF_SIZE - 1)
     {
-        if (*buf != '\n')
+        byte = read(fd, &c, 1);
+        if (byte == 0)
         {
-            read(fd, &c, 1);
-            buf[i] = c;
-            i++;
-        }
-        else
-        {
+            buf[i] = '\0';
             break;
         }
+        buf[i++] = c;   
     }
     return buf;
 }

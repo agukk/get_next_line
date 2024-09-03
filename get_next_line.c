@@ -6,34 +6,34 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 07:59:06 by kentakato         #+#    #+#             */
-/*   Updated: 2024/08/21 21:31:31 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/09/03 18:45:48 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <fcntl.h>
-#include <stdio.h>
-
-#define BUF_SIZE 512
+#include "get_next_line.h"
 
 char *get_next_line(int fd)
 {
-    static char buf[BUF_SIZE];
-    size_t i = 0;
     char c;
     ssize_t byte;
-    
-    while (i < BUF_SIZE - 1)
+    size_t i = 0;
+    static char buf[BUF_SIZE];
+
+    if (fd < 0 || BUF_SIZE <= 0)
+        return NULL;
+
+    while(1)
     {
-        byte = read(fd, &c, 1);
+        byte = read(fd, &c, BUF_SIZE);
         if (byte == 0)
         {
             buf[i] = '\0';
             break;
         }
         buf[i] = c;
-        i++;   
+        i++;
     }
+    
     return buf;
 }
 

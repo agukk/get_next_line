@@ -6,14 +6,16 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 07:59:08 by kentakato         #+#    #+#             */
-/*   Updated: 2024/09/10 21:43:50 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/09/18 22:05:51 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 #define GET_NEXT_LINE_H
 
-#define BUF_SIZE 1
+#ifndef BUFFER_SIZE
+    #define BUFFER_SIZE 1
+#endif    
 #define READ_ERROR -1
 
 #include <stdio.h> // 課題終わったら消す

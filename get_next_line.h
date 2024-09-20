@@ -11,24 +11,23 @@
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
-#define GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-#ifndef BUFFER_SIZE
-    #define BUFFER_SIZE 1
-#endif    
-#define READ_ERROR -1
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+# define READ_ERROR -1
 
-#include <stdio.h> // 課題終わったら消す
-#include <unistd.h>
-#include <fcntl.h> // 課題終わったら消す
-#include <stdlib.h>
+# include <fcntl.h> // 課題終わったら消す
+# include <stdio.h> // 課題終わったら消す
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_string
 {
-    char *str;
-    size_t len;
-    size_t capacity;
-} t_string;
+	char	*str;
+	size_t	len;
+	size_t	capacity;
+}			t_string;
 
-
-#endif 
+#endif

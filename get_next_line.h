@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
+/*   By: kenkato <kenkato@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 07:59:08 by kentakato         #+#    #+#             */
-/*   Updated: 2024/09/18 22:05:51 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/09/20 19:30:44 by kenkato          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # endif
 # define READ_ERROR -1
 
-# include <fcntl.h> // 課題終わったら消す
-# include <stdio.h> // 課題終わったら消す
+# include <fcntl.h> // for open
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -29,5 +29,9 @@ typedef struct s_string
 	size_t	len;
 	size_t	capacity;
 }			t_string;
+
+char		*get_next_line(int fd);
+int			ft_putc(t_string *str, char c);
+int			ft_getc(int fd);
 
 #endif

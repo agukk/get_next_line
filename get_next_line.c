@@ -6,7 +6,7 @@
 /*   By: kenkato <kenkato@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 07:59:06 by kentakato         #+#    #+#             */
-/*   Updated: 2024/09/20 13:55:49 by kenkato          ###   ########.fr       */
+/*   Updated: 2024/09/20 19:27:17 by kenkato          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,18 @@ int	ft_putc(t_string *str, char c)
 	{
 		tmp = str->str;
 		str->str = (char *)malloc(sizeof(char) * (BUFFER_SIZE + str->capacity));
+		if (!str->str)
+		{
+			free(tmp);
+			return (1);
+		}
 		i = 0;
 		while (i < str->len)
 		{
 			str->str[i] = tmp[i];
 			i++;
 		}
+		free(tmp);
 		str->capacity += BUFFER_SIZE;
 	}
 	str->str[str->len] = c;
@@ -69,40 +75,51 @@ char	*get_next_line(int fd)
 		}
 		if (c == EOF)
 			break ;
-		ft_putc(&ret, c);
+		if (ft_putc(&ret, c))
+			return (NULL);
 		if (c == '\n')
 			break ;
 	}
 	if (ret.len > 0)
 	{
-		ft_putc(&ret, '\0');
+		if (ft_putc(&ret, '\0'))
+			return (NULL);
 	}
 	return (ret.str);
 }
 
-int main()
-{
-    int fd = open("example.txt", O_RDONLY);
+// int	main(void)
+// {
+// 	int fd = open("example.txt", O_RDONLY);
+	
+// 	for (int i = 0; i < 4; i++)
+//     {
+//         printf("%s\n", get_next_line(fd));
+//     }
+// }
+// int main()
+// {
+//     int fd = open("example.txt", O_RDONLY);
 
-    t_string ret;
-    char c;
+//     t_string ret;
+//     char c;
 
-    ret.str = NULL;
-    ret.len = 0;
-    ret.capacity = 0;
-    c = 'a';
+//     ret.str = NULL;
+//     ret.len = 0;
+//     ret.capacity = 0;
+//     c = 'a';
 
-    for (size_t i = 0; i < 2; i++)
-    {
-        printf("%c", ft_getc(fd));
-    }
+//     for (size_t i = 0; i < 2; i++)
+//     {
+//         printf("%c", ft_getc(fd));
+//     }
 
-    ft_putc(&ret, c);
-    printf("%s\n", ret.str);
+//     ft_putc(&ret, c);
+//     printf("%s\n", ret.str);
 
-    for (int i = 0; i < 4; i++)
-    {
-        printf("%s", get_next_line(fd));
-    }
-    close(fd);
-}
+//     for (int i = 0; i < 4; i++)
+//     {
+//         printf("%s", get_next_line(fd));
+//     }
+//     close(fd);
+// }

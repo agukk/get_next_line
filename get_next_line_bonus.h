@@ -25,18 +25,18 @@
 
 typedef struct s_string
 {
-	char					*str;
-	size_t					len;
-	size_t					capacity;
-}							t_string;
+	char			*str;
+	size_t			len;
+	size_t			capacity;
+}					t_string;
 
 typedef struct s_buffer
 {
 	ssize_t			n;
 	unsigned char	buf[BUFFER_SIZE];
 	unsigned char	*bufp;
-}							t_buffer;
+}					t_buffer;
 
-char						*get_next_line(int fd);
+char				*get_next_line(int fd);
 
 #endif

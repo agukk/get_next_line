@@ -14,7 +14,8 @@
 
 static int	ft_getc(int fd)
 {
-    static t_buffer buf;
+	static t_buffer	buf;
+
 	if (buf.n == 0)
 	{
 		buf.n = read(fd, buf.buf, BUFFER_SIZE);

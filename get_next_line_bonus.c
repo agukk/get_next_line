@@ -6,7 +6,7 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 16:13:30 by kentakato         #+#    #+#             */
-/*   Updated: 2024/09/22 16:17:57 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/09/22 18:04:14 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,20 @@
 
 static int	ft_getc(int fd)
 {
-	if (n == 0)
+    static t_buffer buf;
+	if (buf.n == 0)
 	{
-		n = read(fd, buf, BUFFER_SIZE);
-		if (n == READ_ERROR)
+		buf.n = read(fd, buf.buf, BUFFER_SIZE);
+		if (buf.n == READ_ERROR)
 		{
-			n = 0;
+			buf.n = 0;
 			return (READ_FAIL);
 		}
-		bufp = buf;
+		buf.bufp = buf.buf;
 	}
-	if (--n >= 0)
-		return (*bufp++);
-	n = 0;
+	if (--buf.n >= 0)
+		return (*buf.bufp++);
+	buf.n = 0;
 	return (EOF);
 }
 

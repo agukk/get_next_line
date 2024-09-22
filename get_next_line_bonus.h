@@ -6,7 +6,7 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 16:13:45 by kentakato         #+#    #+#             */
-/*   Updated: 2024/09/22 16:14:33 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/09/22 16:17:19 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,18 @@
 
 typedef struct s_string
 {
-	char	*str;
-	size_t	len;
-	size_t	capacity;
-}			t_string;
+	char					*str;
+	size_t					len;
+	size_t					capacity;
+}							t_string;
 
-char		*get_next_line(int fd);
-int			ft_putc(t_string *str, char c);
-int			ft_getc(int fd);
+typedef struct s_buffer
+{
+	static ssize_t			n;
+	static unsigned char	buf[BUFFER_SIZE];
+	static unsigned char	*bufp;
+}							t_buffer;
+
+char						*get_next_line(int fd);
 
 #endif

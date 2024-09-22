@@ -6,18 +6,14 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 16:13:30 by kentakato         #+#    #+#             */
-/*   Updated: 2024/09/22 16:14:19 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/09/22 16:17:57 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-int	ft_getc(int fd)
+static int	ft_getc(int fd)
 {
-	static ssize_t			n;
-	static unsigned char	buf[BUFFER_SIZE];
-	static unsigned char	*bufp;
-
 	if (n == 0)
 	{
 		n = read(fd, buf, BUFFER_SIZE);
@@ -29,12 +25,12 @@ int	ft_getc(int fd)
 		bufp = buf;
 	}
 	if (--n >= 0)
-		return *bufp++;
+		return (*bufp++);
 	n = 0;
-	return EOF;
+	return (EOF);
 }
 
-int	ft_putc(t_string *str, char c)
+static int	ft_putc(t_string *str, char c)
 {
 	char	*tmp;
 	size_t	i;
@@ -64,8 +60,8 @@ int	ft_putc(t_string *str, char c)
 
 char	*get_next_line(int fd)
 {
-	t_string	ret;
-	char		c;
+	t_string ret;
+	char c;
 
 	ret.str = NULL;
 	ret.len = 0;

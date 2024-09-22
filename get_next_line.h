@@ -6,7 +6,7 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 07:59:08 by kentakato         #+#    #+#             */
-/*   Updated: 2024/09/22 15:33:58 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/09/22 16:17:11 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,5 @@ typedef struct s_string
 }			t_string;
 
 char		*get_next_line(int fd);
-int			ft_putc(t_string *str, char c);
-int			ft_getc(int fd);
 
 #endif

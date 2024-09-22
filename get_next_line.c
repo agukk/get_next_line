@@ -6,13 +6,13 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 07:59:06 by kentakato         #+#    #+#             */
-/*   Updated: 2024/09/22 15:34:12 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/09/22 16:17:02 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_getc(int fd)
+static int	ft_getc(int fd)
 {
 	static ssize_t			n;
 	static unsigned char	buf[BUFFER_SIZE];
@@ -29,12 +29,12 @@ int	ft_getc(int fd)
 		bufp = buf;
 	}
 	if (--n >= 0)
-		return *bufp++;
+		return (*bufp++);
 	n = 0;
-	return EOF;
+	return (EOF);
 }
 
-int	ft_putc(t_string *str, char c)
+static int	ft_putc(t_string *str, char c)
 {
 	char	*tmp;
 	size_t	i;

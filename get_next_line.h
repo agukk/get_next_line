@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kenkato <kenkato@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 07:59:08 by kentakato         #+#    #+#             */
-/*   Updated: 2024/09/20 19:30:44 by kenkato          ###   ########.fr       */
+/*   Updated: 2024/09/21 22:22:29 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #  define BUFFER_SIZE 1
 # endif
 # define READ_ERROR -1
+# define READ_FAIL -11
 
 # include <fcntl.h> // for open
 # include <stdio.h>

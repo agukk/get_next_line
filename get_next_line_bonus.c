@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 07:59:06 by kentakato         #+#    #+#             */
-/*   Updated: 2024/09/22 15:34:12 by kentakato        ###   ########.fr       */
+/*   Created: 2024/09/22 16:13:30 by kentakato         #+#    #+#             */
+/*   Updated: 2024/09/22 16:14:19 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	ft_getc(int fd)
 {

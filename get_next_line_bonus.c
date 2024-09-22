@@ -6,7 +6,7 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 16:13:30 by kentakato         #+#    #+#             */
-/*   Updated: 2024/09/22 18:04:14 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/09/22 20:38:01 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_getc(int fd)
 {
-	static t_buffer	buf;
+	static t_fd_state	buf;
 
 	if (buf.n == 0)
 	{

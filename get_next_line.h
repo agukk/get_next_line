@@ -6,7 +6,7 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 07:59:08 by kentakato         #+#    #+#             */
-/*   Updated: 2024/09/21 22:22:29 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/09/22 15:33:58 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # define READ_ERROR -1
 # define READ_FAIL -11
 
-# include <fcntl.h> // for open
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>

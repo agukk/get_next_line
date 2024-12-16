@@ -6,7 +6,7 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 07:59:06 by kentakato         #+#    #+#             */
-/*   Updated: 2024/09/22 23:07:51 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/12/16 21:43:24 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static int	ft_putc(t_string *line, char c)
 	if (line->capacity < line->length + 1)
 	{
 	    tmp = line->str;
-		line->str = (char *)malloc(sizeof(char) * (BUFFER_SIZE
+		line->str = (char *)malloc(sizeof(char) * (BLK_SIZE
 					+ line->capacity));
 		if (!line->str)
 		{

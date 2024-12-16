@@ -6,7 +6,7 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 16:13:45 by kentakato         #+#    #+#             */
-/*   Updated: 2024/09/22 23:11:26 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/12/16 22:28:00 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
+# endif
+
+# ifndef BLK_SIZE
+#  define BLK_SIZE 4096
 # endif
 
 # define READ_ERROR -2

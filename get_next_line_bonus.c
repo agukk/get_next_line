@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kenkato <kenkato@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 16:13:30 by kentakato         #+#    #+#             */
-/*   Updated: 2024/12/20 20:06:25 by kenkato          ###   ########.fr       */
+/*   Updated: 2024/12/20 21:02:09 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static int	ft_putc(t_string *line, char c)
 			i++;
 		}
 		free(tmp);
-		line->capacity += BUFFER_SIZE;
+		line->capacity += BLK_SIZE;
 	}
 	line->str[line->length] = c;
 	line->length++;

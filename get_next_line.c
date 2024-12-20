@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
+/*   By: kenkato <kenkato@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 07:59:06 by kentakato         #+#    #+#             */
-/*   Updated: 2024/12/16 21:43:24 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/12/20 20:06:17 by kenkato          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,8 @@ static int	ft_putc(t_string *line, char c)
 
 	if (line->capacity < line->length + 1)
 	{
-	    tmp = line->str;
-		line->str = (char *)malloc(sizeof(char) * (BLK_SIZE
-					+ line->capacity));
+		tmp = line->str;
+		line->str = (char *)malloc(sizeof(char) * (BLK_SIZE + line->capacity));
 		if (!line->str)
 		{
 			free(tmp);
